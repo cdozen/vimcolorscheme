@@ -1,0 +1,280 @@
+# vim: ft=colortemplate
+
+# Information {{{
+
+Full name:   Vitamin-Onec
+Short name:  vitaminonec
+Author:      GregKapfhammer <gkapfham@allegheny.edu>
+Website:     https://github.com/gkapfham/vim-vitamin-onec
+Description: A dark Vim colorscheme with vitaminic colors that promote fruitful programming and writing
+License:     MIT License
+Neovim:      yes
+
+# }}}
+
+# Documentation {{{
+
+Include: _help.colortemplate
+
+# }}}
+
+# Common Linked Groups {{{
+
+Repeat            -> Statement
+StatusLineTerm    -> StatusLine
+StatusLineTermNC  -> StatusLineNC
+Conditional       -> Statement
+Define            -> PreProc
+Exception         -> Statement
+Macro             -> PreProc
+PreCondit         -> PreProc
+Tag               -> Special
+Typedef           -> Type
+lCursor           -> Cursor
+
+# }}}
+
+# Only Provide Dark Theme {{{
+
+Background: dark
+
+# }}}
+
+# Color Palette {{{
+
+# Color name                GUI                  Base256    Base16
+
+Color: black                rgb( 28,  28,  29)   234        Black
+Color: red                  rgb(215,  95,  95)   167        DarkRed
+Color: green                rgb( 95, 135,   0)   64         DarkGreen
+Color: yellow               rgb(175, 175,  95)   143        DarkYellow
+Color: blue                 rgb(135, 175, 215)   110        DarkBlue
+Color: magenta              rgb(135,  95, 135)   96         DarkMagenta
+Color: cyan                 rgb(135, 175, 135)   108        DarkCyan
+Color: white                rgb(118, 118, 118)   243        Gray
+Color: brightblack          rgb( 48,  48,  48)   236        Black
+Color: brightred            rgb(215,  95,  95)   167        DarkRed
+Color: brightgreen          rgb( 95, 135,   0)   64         DarkGreen
+Color: brightyellow         rgb(215, 135,   0)   172        DarkYellow
+Color: brightblue           rgb(135, 175, 215)   110        DarkBlue
+Color: brightmagenta        rgb(135,  95, 135)   96         DarkMagenta
+Color: brightcyan           rgb(135, 175, 135)   108        DarkCyan
+Color: brightwhite          rgb(168, 168, 168)   248        Gray
+
+Term Colors: black red green yellow blue magenta cyan white
+Term Colors: brightblack brightred brightgreen brightyellow
+Term Colors: brightblue brightmagenta brightcyan brightwhite
+
+# }}}
+
+# Default Highlighting {{{
+
+Variant: gui
+#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+Variant: 256 8
+#if get(g:, '@optionprefix_transp_bg', 0)
+Variant: gui 256 8
+    Normal           brightwhite       none
+    CursorLineNr     green             none
+    FoldColumn       white             none
+    LineNr           white             none
+    Terminal         brightwhite       none
+#else
+    Normal           brightwhite       none
+    CursorLineNr     green             none
+    FoldColumn       white             none
+    LineNr           white             none
+    Terminal         brightwhite       none
+#endif
+
+# Group              Foreground        Background        Attributes
+
+ColorColumn          none              brightblack
+Conceal              brightyellow      none
+Cursor               yellow            none
+CursorColumn         none              brightblack
+CursorLine           none              brightblack
+DiffAdd              green             black             bold
+DiffChange           blue              black             bold
+DiffDelete           red               black             bold
+DiffText             green             brightwhite       bold,reverse
+Directory            green             none
+EndOfBuffer          brightblack       none
+ErrorMsg             red               black
+Folded               brightwhite       brightblack       italic
+IncSearch            none              none              reverse
+MatchParen           brightblack       brightyellow      bold
+ModeMsg              yellow            none
+MoreMsg              yellow            none
+NonText              brightwhite       none
+Pmenu                brightwhite       brightblack
+PmenuSbar            brightblack       brightblack
+PmenuSel             brightwhite       brightblack       reverse
+PmenuThumb           brightblack       white
+Question             yellow            none
+Search               none              none              underline,bold
+SignColumn           white             none
+SpecialKey           white             none
+SpellBad             red               none              s=red t=underline g=undercurl
+SpellCap             brightmagenta     none              s=magenta t=underline g=undercurl
+SpellLocal           brightmagenta     none              s=magenta t=underline g=undercurl
+SpellRare            brightmagenta     none              s=magenta t=underline g=undercurl
+StatusLine           black             brightwhite       reverse
+StatusLineNC         black             black             reverse
+TabLine              black             cyan
+TabLineFill          brightwhite       cyan
+TabLineSel           brightwhite       cyan
+Title                green             none
+VertSplit            white             black
+Visual               none              brightblack
+VisualNOS            brightwhite       blue
+WarningMsg           red               none
+WildMenu             magenta           black
+Boolean              brightgreen       none
+Character            yellow            none
+Comment              white             none              italic
+Constant             red               none
+Debug                magenta           none
+Delimiter            none              none
+Error                red               black             underline
+Float                blue              none
+Function             green             none
+Identifier           blue              none
+Ignore               brightwhite       none
+Include              red               none
+Keyword              blue              none
+Label                green             none
+Number               red               none
+Operator             brightcyan        none
+PreProc              blue              none
+Special              yellow            none
+SpecialChar          magenta           none
+SpecialComment       red               none
+Statement            cyan              none
+StorageClass         brightcyan        none
+String               yellow            none
+Structure            red               none
+Todo                 brightyellow      none              bold,underline
+Type                 brightyellow      none
+Underlined           green             none              underline
+CursorIM             none              brightwhite
+ToolbarLine          none              brightblack
+ToolbarButton        cyan              brightblack       bold
+
+# }}}
+
+# ALE Highlighting {{{
+
+ALEWarningSign         -> String
+ALEErrorSign           -> WarningMsg
+ALEErrorSignLineNr     none     none
+ALEInfoSignLineNr      none     none
+ALEWarningSignLineNr   none     none
+
+# }}}
+
+# Conceal Highlighting {{{
+
+Conceal brightyellow  none
+
+# }}}
+
+# Easymotion Highlighting {{{
+
+EasyMotionTarget      -> Type
+EasyMotionShade       -> Comment
+EasyMotionIncSearch   -> Type
+EasyMotionIncCursor   -> Type
+EasyMotionMoveHL      -> Type
+
+# }}}
+
+# FZF Highlighting {{{
+
+fzf1 black blue  bold
+fzf2 black blue  bold
+fzf3 blue  black
+
+# }}}
+
+# Git-Messenger Highlighting {{{
+
+gitmessengerHeader      -> Statement
+gitmessengerHash        -> Comment
+gitmessengerHistory     -> Constant
+gitmessengerPopupNormal -> CursorLine
+
+gitmessengerEndOfBuffer    none  none
+
+# }}}
+
+# LaTeX Highlighting {{{
+
+texRefZone -> PreProc
+texCite    -> Special
+
+# }}}
+
+# Java Highlighting {{{
+
+javaScopeDecl  -> Identifier
+javaAnnotation -> Type
+
+# }}}
+
+# Markdown Highlighting {{{
+
+markdownHeadingDelimiter -> Type
+
+# }}}
+
+# Semshi Highlighting for Python {{{
+
+semshiLocal           red              none
+semshiGlobal          green            none              italic
+semshiImported        blue             none
+semshiParameter       blue             none
+semshiParameterUnused blue             none              underline
+semshiFree            red              none
+semshiBuiltin         green            none              underline
+semshiAttribute       cyan             none
+semshiSelf            magenta          none              italic
+semshiUnresolved      none             none              underline
+semshiSelected        none             none              underline,bold
+
+# }}}
+
+# Signature Highlighting {{{
+
+SignatureMarkText    brightyellow      black             bold
+SignatureMarkerText  yellow            black             bold
+
+# }}}
+
+# Statusline Highlighting {{{
+
+NormalMode           white             brightwhite       reverse
+InsertMode           brightgreen       black             reverse
+ReplaceMode          yellow            black             reverse
+VisualMode           blue              brightwhite       reverse
+CommandMode          magenta           brightwhite       reverse
+
+# }}}
+
+# Quickfix Highlighting {{{
+
+qfFileName -> Directory
+
+qfLineNr             red             black
+qfError              red             black
+QuickFixLine         none            brightblack
+
+# }}}
+
+# NeoVim Highlighting {{{
+
+TermCursor        -> Cursor
+TermCursorNC         brightwhite       white
+ExtraWhitespace      brightyellow      none
+
+# }}}
